@@ -1,6 +1,9 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router';
 import Search from './Search';
+import RepoList from './RepoList';
+import Repo from './Repo';
 
 
 function App() {
@@ -18,8 +21,9 @@ function App() {
 
   return (
     <div>
-     <Search setSearchName={setSearchName}/>
-      
+     <Search searchName={searchName} setSearchName={setSearchName}/>
+     <RepoList data={data}/>
+     <Repo/>
     </div>
   )
 }
