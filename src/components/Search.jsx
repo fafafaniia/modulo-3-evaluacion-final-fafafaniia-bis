@@ -2,11 +2,11 @@
 
 function Search({setLanguageFilter, setNameFilter}) {
     const handleLanguageChange = (e) => {
-        setLanguageFilter(e.target.value); // Actualizamos el filtro por lenguaje
+        setLanguageFilter(e.target.value); 
       };
     
       const handleNameChange = (e) => {
-        setNameFilter(e.target.value); // Actualizamos el filtro por nombre
+        setNameFilter(e.target.value); 
       };
 
     return(
