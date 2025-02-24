@@ -7,8 +7,16 @@ import Repo from './Repo';
 
 
 function App() {
-  const [searchName, setSearchName] = useState('');
   const [data, setData] = useState([]);
+
+  const [languageFilter, setLanguageFilter] = useState('');
+  const [nameFilter, setNameFilter] = useState('');
+
+  const filteredData = data.filter((item) => {
+    const filteredLang = languageFilter ? item.language === languageFilter : true;
+    const filteredName = item.name.toLowerCase().includes(nameFilter.toLowerCase());
+    return filteredLang && filteredName;
+  });
 
 
   useEffect(() => {
@@ -21,8 +29,8 @@ function App() {
 
   return (
     <div>
-     <Search searchName={searchName} setSearchName={setSearchName}/>
-     <RepoList data={data}/>
+     <Search setLanguageFilter={setLanguageFilter} setNameFilter={setNameFilter}/>
+     <RepoList data={filteredData}/>
      <Repo/>
     </div>
   )

@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function RepoList({data}) {
     const getLanguageColor = (language) => {
@@ -35,7 +35,7 @@ function RepoList({data}) {
 }
 
 RepoList.propTypes= {
-    setData: propTypes.array.isRequired
+    data: PropTypes.array.isRequired
 }
 
 export default RepoList;
