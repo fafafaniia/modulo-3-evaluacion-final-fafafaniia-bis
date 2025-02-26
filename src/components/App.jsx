@@ -34,7 +34,12 @@ function App() {
       <Route path="/" element={<RepoList data={filteredData} />}/>
       <Route path="/repo/:id" element={<RepoDetail data={data} />}/>
      </Routes>
+      <footer>
+        <p>&copy; 2025 Adalab. Ya estaría 🐑.</p>
+      </footer>
     </div>
+    
+  
   )
 }
 

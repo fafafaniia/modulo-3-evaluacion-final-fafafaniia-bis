@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import logoAdalab from '../images/logo-adalab.png'
 
 function Search({setLanguageFilter, setNameFilter}) {
     const handleLanguageChange = (e) => {
@@ -10,7 +11,8 @@ function Search({setLanguageFilter, setNameFilter}) {
       };
 
     return(
-        <header className="header">
+        <div className="header">
+            <img className="logoAdalab" src={logoAdalab} alt="Imagen con el logo de Adalab que tiene escrito Repositorios de Adalab" />
             <div className="search-container">
                 <select onChange={handleLanguageChange} defaultValue="">
                 <option value="">Filtrar por lenguaje</option>
@@ -25,7 +27,7 @@ function Search({setLanguageFilter, setNameFilter}) {
                 onChange={handleNameChange}
                 />
             </div>
-        </header>
+        </div>
     )
 }
 
