@@ -1,0 +1,43 @@
+.header {
+  position: relative;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c98dac4;
+  background-image: url('../../images/logo-adalab.png'); 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  input[type="text"], select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .searchInput {
+    width: 300px;
+  }
+
+  select {
+    width: 200px;
+  }
+
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #007BFF;
+  }
+
+  input::placeholder {
+    color: #999;
+  }
+}

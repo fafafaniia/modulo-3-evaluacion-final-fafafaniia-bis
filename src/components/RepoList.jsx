@@ -1,37 +1,21 @@
 import PropTypes from 'prop-types';
+import Repo from './Repo';
+import { useNavigate } from 'react-router';
 
 function RepoList({data}) {
-    const getLanguageColor = (language) => {
-        switch (language) {
-          case 'HTML':
-            return 'red';
-          case 'CSS':
-            return 'blue';
-          case 'JavaScript':
-            return 'yellow';
-          default:
-            return 'gray';
-        }
-    };
+  const navigate = useNavigate();
 
-    return(
-        <ul>
-        {data.map((item) => (
-            <li key={item.id}>
-                <h2>
-                <a href={item.html_url} target="_blank" rel="noopener noreferrer">
-                    {item.name}
-                </a>
-                </h2>
-                {item.description && <p>{item.description}</p>}
-                {item.language && (
-                <div className={`language-circle ${item.language.toLowerCase()}`}></div>
-                )}
-                {item.language && <span>{item.language}</span>}
-            </li>
-            ))}
+  const handleRepoClick = (repo) => {
+    navigate(`/repo/${repo.id}`);
+  };
+
+  return(
+      <div className='body'>
+        <ul className='repo-list'>
+        <Repo data={data} handleRepoClick={handleRepoClick}/>
         </ul>
-    )
+      </div>
+  )
 }
 
 RepoList.propTypes= {

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  
+    .repo-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+      gap: 20px; 
+      margin-top: 20px;
+      justify-items: center;
+      padding: 0 20px;
+  
+      .repo-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 2px solid #007BFF;
+        transition: transform 0.3s;
+        width: 100%;
+        max-width: 320px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+  
+        &:hover {
+          transform: translateY(-5px);
+        }
+  
+        h3 {
+          margin: 0;
+          font-size: 18px;
+          color: #333;
+        }
+  
+        p {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #555;
+        }
+  
+        a {
+          color: #007BFF;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+  
+        .language-circle {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          margin-right: 8px;
+          margin-top: 8px;
+  
+          &.html {
+            background-color: red;
+          }
+  
+          &.css {
+            background-color: rgb(255, 0, 170);
+          }
+  
+          &.javascript {
+            background-color: yellow;
+          }
+  
+          &.default {
+            background-color: gray;
+          }
+        }
+      }
+    }
+  
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+  }
+  

@@ -1,9 +1,9 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, } from 'react-router';
 import Search from './Search';
 import RepoList from './RepoList';
-import Repo from './Repo';
+import RepoDetail from './RepoDetail';
 
 
 function App() {
@@ -30,8 +30,10 @@ function App() {
   return (
     <div>
      <Search setLanguageFilter={setLanguageFilter} setNameFilter={setNameFilter}/>
-     <RepoList data={filteredData}/>
-     <Repo/>
+     <Routes>
+      <Route path="/" element={<RepoList data={filteredData} />}/>
+      <Route path="/repo/:id" element={<RepoDetail data={data} />}/>
+     </Routes>
     </div>
   )
 }
